@@ -2,7 +2,7 @@
 
 Personal portfolio of a Mathematics and Computer Science graduate (Suez University, 2026): web and mobile projects, applied mathematical modeling, and robotics teaching.
 
-**Live site:** https://YOUR-SITE-URL
+**Live site:** 
 
 ## Highlights
 
