@@ -241,7 +241,7 @@ export const data = {
       state: "Completed",
       team: true,
       summary:
-        "A desktop application that pulls emails, phone numbers, names, addresses and dates out of text, PDF and Word documents.",
+        "A Python tool with a file picker that extracts emails, phone numbers, names, addresses and dates from text, PDF and Word files, and masks phone-like numbers in the output.",
       tags: [
         "Python",
         "Regular expressions",
@@ -250,36 +250,44 @@ export const data = {
         "Data validation",
         "Data masking",
       ],
-      role: "Developer (added the data masking feature to a team project)",
+      role: "Developer (reworked and extended a team project)",
+
       overview: [
-        "A desktop application that extracts and analyzes structured information from text documents, including email addresses, phone numbers, names, addresses and dates.",
+        "A Python tool that extracts and analyzes structured information from text, PDF and Word files, including email addresses, phone numbers, names, addresses and dates. You run it from the terminal and pick a file in a dialog window.",
       ],
       features: [
-        "Extracts information using regular expressions",
+        "Extracts emails, phone numbers, names, addresses and dates using regular expressions",
         "Reads TXT, PDF and DOCX files",
-        "Validates extracted data and filters phone numbers",
-        "Masks sensitive digits in phone numbers to protect privacy",
-        "Generates structured reports so the results are easy to read",
+        "Validates emails, phone numbers and dates, and filters out fake phone numbers",
+        "Masks the last six digits of phone-like numbers while keeping text positions",
+        "Writes an analysis report (line and column), an ordered list and a masked copy of the text",
+        "Covered by automated tests with pytest",
       ],
+
       contribution: [
-        "Improved the team's extraction code by adding the data masking feature",
-        "Masks sensitive parts of extracted emails and phone numbers to protect privacy",
+        "Reworked the team's original extraction code across all modules",
+        "Added validation for emails, phone numbers and dates",
+        "Built the phone-number masking that preserves text positions",
+        "Added the analysis report (line and column numbers) and the output writer",
+        "Wrote the automated tests with pytest",
       ],
       stackMine: {
         label: "Technologies",
         items: [
           "Python",
           "Regular expressions",
+          "phonenumbers",
+          "email-validator",
+          "pypdf",
+          "python-docx",
           "Tkinter",
-          "PDF, DOCX and TXT processing",
-          "Data validation",
-          "Data masking",
+          "pytest",
         ],
       },
       links: [
         {
           label: "Source code",
-          href: "",
+          href: "https://github.com/AhmedShosha3/regex-data-extraction-tool",
           icon: "github",
         },
       ],
@@ -297,56 +305,34 @@ export const data = {
         },
       ],
       samplesNote:
-        "Console output from the extraction and masking scripts, run on a test text file.",
+        "Excerpts from the output files generated for samples/test.txt.",
       samples: [
         {
-          title: "Extraction and validation",
-          text: `Text file loaded successfully.
-
-Found emails: 8
-Valid emails: 7
-  support@techhub.com
-  hr.department@techhub.co.uk
-  info_2025-service@mail-server.org
-  ahmed.khaled22@gmail.com
-  mona.saleh@outlook.com
-  omar.dev@hotmail.com
-  sara@company.ai
-Rejected: john@gmal.com
-
-Found phone numbers: 7
-  +201001234567
-  +201122334455
-  +971501234567
-  +966531679615
-  +20223456789
-  +201100001111
-  +201098765432`,
+          title: "Extracted data (ordered_output.txt)",
+          text: `Email: support@techhub.com
+Email: hr.department@techhub.co.uk
+Email: info_2025-service@mail-server.org
+Address: 25 Main Street
+Date: 25/12/2026
+Date: 2026-10-19
+PhoneNumber: +201001234567
+PhoneNumber: +201122334455
+PhoneNumber: +971501234567
+Name: Ahmed Khaled
+Name: Mona Saleh
+Email: ahmed.khaled22@gmail.com`,
         },
         {
-          title: "Masking",
-          text: `Text file loaded successfully.
+          title: "Masked text (masked_output.txt)",
+          text: `For business inquiries, call us at:
++201001******, or our Cairo office: +201122******.
+We also have a Dubai number: +971501******.
 
-Masked emails:
-  s***t@techhub.com
-  h***t@techhub.co.uk
-  i***e@mail-server.org
-  a***2@gmail.com
-  m***h@outlook.com
-  o***v@hotmail.com
-  s***a@company.ai
-
-Masked phone numbers:
-  2010********
-  2011********
-  9715********
-  9665********
-  2022*******
-  2011********
-  2010********
-
-Masked text saved as test_masked.txt
-Summary: 7 emails and 7 phone numbers masked.`,
+Customer Service lines:
+- +1234******
+- +966531******
+- +20223****** (landline)
+- +201100******`,
         },
       ],
     },
