@@ -135,7 +135,7 @@ export const data = {
       links: [
         {
           label: "Source code",
-          href: "",
+          href: "https://github.com/AhmedShosha3/simple-calculator",
           icon: "github",
         },
       ],
@@ -184,7 +184,7 @@ export const data = {
       links: [
         {
           label: "Source code",
-          href: "",
+          href: "https://github.com/AhmedShosha3/categorized-quotes-app",
           icon: "github",
         },
       ],
