@@ -61,8 +61,8 @@ export const data = {
       group: "Databases",
       items: [
         "Database fundamentals",
-        "Database design",
         "SQL",
+        "Database design",
         "Relational database",
       ],
       evidence: "Summer database training at Nasr Petroleum Academy.",
@@ -71,16 +71,16 @@ export const data = {
       group: "Cybersecurity and networking",
       items: [
         "Network fundamentals",
+        "Cryptography",
         "Network security basics",
         "Cybersecurity basics",
-        "Cryptography",
       ],
       evidence:
         "20-hour Cyber Security course (British University in Egypt) and three Mahara-Tech courses. Learning stage.",
     },
     {
       group: "Robotics and electronics",
-      items: ["LEGO WeDo", "Electronics (teaching assistant)"],
+      items: ["LEGO WeDo", "Electronics (Assistant)"],
       evidence: "Current role at Big Hero Robotics Academy.",
     },
     {
@@ -272,7 +272,7 @@ export const data = {
         "Wrote the automated tests with pytest",
       ],
       stackMine: {
-        label: "Technologies",
+        label: "",
         items: [
           "Python",
           "Regular expressions",
