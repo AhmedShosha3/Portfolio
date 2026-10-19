@@ -3,6 +3,10 @@
   <head>
     <script>
       try {
+        if (localStorage.getItem("lang") === "ar") {
+          document.documentElement.lang = "ar";
+          document.documentElement.dir = "rtl";
+        }
         if (localStorage.getItem("theme") === "light")
           document.documentElement.setAttribute("data-theme", "light");
       } catch (e) {}

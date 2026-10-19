@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Icon from "./Icon.jsx";
 import Badges from "./Badges.jsx";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectCard({ project: p }) {
+  const { t } = useTranslation();
   const [broken, setBroken] = useState(false);
   const shot = p.screenshots?.[0];
   const href = "#/projects/" + p.id;
@@ -30,14 +32,18 @@ export default function ProjectCard({ project: p }) {
         </h3>
         <p className="summary">{p.summary}</p>
         <ul className="chips">
-          {p.tags.map((t) => (
-            <li className="chip" key={t}>
-              {t}
+          {p.tags.map((tag) => (
+            <li className="chip" key={tag}>
+              {tag}
             </li>
           ))}
         </ul>
-        <a className="more" href={href} aria-label={"View project: " + p.title}>
-          View project
+        <a
+          className="more"
+          href={href}
+          aria-label={t("card.viewAria", { title: p.title })}
+        >
+          {t("card.view")}
           <Icon name="arrow" />
         </a>
       </div>

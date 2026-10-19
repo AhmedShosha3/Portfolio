@@ -1,8 +1,11 @@
 import { useMemo, useState } from "react";
-import { data } from "../data/portfolio.js";
+import { useTranslation } from "react-i18next";
+import useData from "../i18n/useData.js";
 import FilterBar from "./FilterBar.jsx";
 
 export default function Certificates() {
+  const { t } = useTranslation();
+  const data = useData();
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
@@ -14,33 +17,33 @@ export default function Certificates() {
           (c) =>
             (filter === "all" || c.cat === filter) &&
             (!q ||
-              `${c.title} ${c.issuer} ${c.desc || ""}`.toLowerCase().includes(q)),
+              `${c.title} ${c.issuer} ${c.desc || ""}`
+                .toLowerCase()
+                .includes(q)),
         )
         .sort((a, b) => (b.sort || "").localeCompare(a.sort || "")),
-    [filter, q],
+    [data, filter, q],
   );
 
   return (
     <section className="block" id="certifications" aria-labelledby="cert-h">
+      {" "}
       <div className="wrap">
         <div className="sec-head">
-          <h2 id="cert-h">Certificates and courses</h2>
-          <p className="lede">
-            Completed courses, training programs and initiatives, listed with
-            their real length. None is a vendor professional certification.
-          </p>
+          <h2 id="cert-h">{t("certs.title")}</h2>
+          <p className="lede">{t("certs.lede")}</p>
         </div>
         <FilterBar
           options={data.certFilters}
           value={filter}
           onChange={setFilter}
-          label="Filter certificates by topic"
+          label={t("certs.filter")}
         />
         <input
           className="search"
           type="search"
-          placeholder="Search certificates"
-          aria-label="Search certificates"
+          placeholder={t("certs.search")}
+          aria-label={t("certs.search")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -54,16 +57,22 @@ export default function Certificates() {
                 </div>
                 <h3>{c.title}</h3>
                 <p className="issuer">{c.issuer}</p>
-                {c.date && <p className="issuer">Completed {c.date}</p>}
+                {c.date && (
+                  <p className="issuer">
+                    {t("certs.completed", { date: c.date })}
+                  </p>
+                )}
                 {c.desc && <p className="desc">{c.desc}</p>}
-                {c.code && <p className="code">Verification code: {c.code}</p>}
+                {c.code && (
+                  <p className="code">{t("certs.code", { code: c.code })}</p>
+                )}
               </article>
             ))
           ) : (
             <div className="empty">
               {q
-                ? `No certificates match \u201C${query.trim()}\u201D. Clear the search to see them all.`
-                : "No certificates in this topic yet."}
+                ? `${t("certs.emptyQ")} \u201C${query.trim()}\u201D.`
+                : `${t("certs.empty")}`}
             </div>
           )}
         </div>

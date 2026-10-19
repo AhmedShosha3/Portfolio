@@ -1,9 +1,12 @@
 import { useEffect, useRef } from "react";
-import { data } from "../data/portfolio.js";
+import { useTranslation } from "react-i18next";
+import useData from "../i18n/useData.js";
 import Icon from "./Icon.jsx";
 
 export default function NotFound({ id }) {
   const h1 = useRef(null);
+  const { t } = useTranslation();
+  const data = useData();
   useEffect(() => {
     h1.current?.focus({ preventScroll: true });
   }, [id]);
@@ -12,15 +15,12 @@ export default function NotFound({ id }) {
     <div className="wrap detail-head">
       <a className="back" href="#projects">
         <Icon name="back" />
-        All projects
+        {t("detail.all")}
       </a>
       <h1 ref={h1} tabIndex={-1}>
-        Project not found
+        {t("notFound.title")}
       </h1>
-      <p className="lede">
-        There is no project at &ldquo;{id}&rdquo;. The link may be mistyped or
-        the project may have been renamed.
-      </p>
+      <p className="lede">{t("notFound.body", { id })}</p>
       <div
         className="links"
         style={{

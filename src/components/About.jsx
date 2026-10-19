@@ -1,12 +1,15 @@
-import { data } from "../data/portfolio.js";
+import { useTranslation } from "react-i18next";
+import useData from "../i18n/useData.js";
 
 export default function About() {
+  const { t } = useTranslation();
+  const data = useData();
   return (
     <section className="block" id="about" aria-labelledby="about-h">
       <div className="wrap about">
         <div>
           <div className="sec-head">
-            <h2 id="about-h">About me</h2>
+            <h2 id="about-h">{t("about.title")}</h2>
           </div>
           <div className="prose">
             {data.about.map((text) => (

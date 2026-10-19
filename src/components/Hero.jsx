@@ -1,8 +1,11 @@
-import { data } from "../data/portfolio.js";
+import { useTranslation } from "react-i18next";
+import useData from "../i18n/useData.js";
 import Icon from "./Icon.jsx";
 import SocialLinks from "./SocialLinks.jsx";
 
 export default function Hero() {
+  const { t } = useTranslation();
+  const data = useData();
   const { person, links } = data;
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
@@ -16,7 +19,7 @@ export default function Hero() {
           <p className="intro">{person.intro}</p>
           <div className="cta-row">
             <a className="btn primary" href="#projects">
-              View projects
+              {t("hero.projects")}
               <Icon name="arrow" />
             </a>
             {links.cv ? (
@@ -26,11 +29,11 @@ export default function Hero() {
                 download="Ahmed-Kamel-CV.pdf"
               >
                 <Icon name="download" />
-                Download CV
+                {t("hero.cv")}
               </a>
             ) : (
               <a className="btn ghost" href="#about">
-                About me
+                {t("hero.about")}
               </a>
             )}
           </div>
@@ -39,11 +42,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div
-          className="code-card"
-          role="img"
-          aria-label="Profile summary: Bachelor of Science in Mathematics and Computer Science, Suez University, 2026. Builds with React, Flutter and Python. Models with MATLAB. Teaches LEGO WeDo and electronics. Learning networking and cybersecurity."
-        >
+        <div className="code-card" role="img" aria-label={t("hero.profile")}>
           <div className="file" aria-hidden="true">
             <span className="dot" />
             <span className="dot" />
@@ -62,7 +61,7 @@ export default function Hero() {
             <span className="ln" style={{ "--i": 2 }}>
               {"  "}
               <span className="k">"Department"</span>:{" "}
-              <span className="s">"Mathematics &amp; Computer Science"</span>,
+              <span className="s">"Mathematics & Computer Science"</span>,
             </span>
             <span className="ln" style={{ "--i": 3 }}>
               {"  "}

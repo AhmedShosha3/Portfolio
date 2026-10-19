@@ -4,7 +4,7 @@ export const data = {
     brand: "Ahmed Shosha",
     intro:
       "Mathematics and Computer Science graduate with hands-on experience in web and mobile development, applied mathematical modeling and robotics teaching. Interested in software development and cybersecurity.",
-    headline: "Junior software developer · React, Flutter and Python",
+    headline: "Junior software developer · React and Python",
     availability: "Open to junior software roles and internships · Suez, Egypt",
   },
 
@@ -381,11 +381,17 @@ Customer Service lines:
         "Compared the execution times of numerical methods at different step sizes.",
         "Compared simulated COVID-19 infection dynamics with reported data from the study period.",
       ],
-      links: [{ label: "Live demo", href: "", icon: "external" }],
+      links: [
+        {
+          label: "Source code",
+          href: "https://github.com/AhmedShosha3/Cancer-and-COVID-19-Mathematical-Models",
+          icon: "github",
+        },
+      ],
       resultsNote:
         "Findings are based on the numerical simulations and analyses documented in the graduation report.",
       stackMine: {
-        label: "Tools & Methods",
+        label: "",
         items: [
           "MATLAB",
           "Microsoft Word",

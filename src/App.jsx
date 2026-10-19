@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
-import { data, projectById } from "./data/portfolio.js";
+import { useTranslation } from "react-i18next";
+import { data as base } from "./data/portfolio.js"; // replaces the data/projectById import
+import useData from "./i18n/useData.js";
 import useTheme from "./hooks/useTheme.js";
 import useHashRoute from "./hooks/useHashRoute.js";
 import useActiveSection from "./hooks/useActiveSection.js";
@@ -16,26 +18,30 @@ import Footer from "./components/Footer.jsx";
 import ProjectDetail from "./components/ProjectDetail.jsx";
 import NotFound from "./components/NotFound.jsx";
 
-const baseTitle = document.title;
-const { links, person } = data;
+const { links } = base;
 const hasContact = Boolean(links.email || links.github || links.linkedin);
-
 const NAV = [
-  ["about", "About"],
-  ["skills", "Skills"],
-  ["projects", "Projects"],
-  ["experience", "Experience"],
-  ["education", "Education"],
-  ["certifications", "Certificates"],
+  ["about", "nav.about"],
+  ["skills", "nav.skills"],
+  ["projects", "nav.projects"],
+  ["experience", "nav.experience"],
+  ["education", "nav.education"],
+  ["certifications", "nav.certifications"],
 ];
-if (hasContact) NAV.push(["contact", "Contact"]);
+if (hasContact) NAV.push(["contact", "nav.contact"]);
 const SECTION_IDS = NAV.map(([id]) => id);
 
 export default function App() {
+  const { t } = useTranslation();
+  const data = useData();
+  const { person } = data;
   const [theme, toggleTheme] = useTheme();
   const route = useHashRoute();
   const project =
-    route.projectId !== null ? projectById(route.projectId) : undefined;
+    route.projectId !== null
+      ? data.projects.find((p) => p.id === route.projectId)
+      : undefined;
+  // ...rest unchanged
   const view = project
     ? "detail"
     : route.projectId !== null
@@ -48,9 +54,9 @@ export default function App() {
     document.title = project
       ? `${project.title} | ${person.name}`
       : view === "missing"
-        ? `Project not found | ${person.name}`
-        : baseTitle;
-  }, [project, view]);
+        ? `${t("notFound.title")} | ${person.name}`
+        : t("title");
+  }, [project, view, person.name, t]);
 
   useEffect(() => {
     const was = prevView.current;
@@ -69,7 +75,7 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#main">
-        Skip to content
+        {t("skip")}
       </a>
       <Header
         brand={person.brand}

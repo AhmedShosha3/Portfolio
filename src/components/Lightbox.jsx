@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon.jsx";
+import { useTranslation } from "react-i18next";
 
 export default function Lightbox({ shots, index, onChange, onClose }) {
+  const { t } = useTranslation();
   const dlg = useRef(null);
   const startX = useRef(null);
   const [failed, setFailed] = useState(false);
@@ -42,7 +44,7 @@ export default function Lightbox({ shots, index, onChange, onClose }) {
     <dialog
       ref={dlg}
       className="lb"
-      aria-label="Screenshot viewer"
+      aria-label={t("lb.viewer")}
       onClose={() => {
         document.body.style.overflow = "";
         onClose();
@@ -72,7 +74,7 @@ export default function Lightbox({ shots, index, onChange, onClose }) {
           <button
             className="lb-btn lb-close"
             type="button"
-            aria-label="Close viewer"
+            aria-label={t("lb.close")}
             onClick={() => dlg.current.close()}
           >
             <Icon name="close" />
@@ -81,7 +83,7 @@ export default function Lightbox({ shots, index, onChange, onClose }) {
             <button
               className="lb-btn lb-prev"
               type="button"
-              aria-label="Previous screenshot"
+              aria-label={t("lb.prev")}
               onClick={() => go(index - 1)}
             >
               <Icon name="back" />
@@ -93,7 +95,7 @@ export default function Lightbox({ shots, index, onChange, onClose }) {
             onError={() => setFailed(true)}
           />
           <p className="lb-cap">
-            {failed ? "This image could not be loaded." : shot.caption || ""}
+            {failed ? t("lb.failed") : shot.caption || ""}
           </p>
           {count > 1 && (
             <span className="lb-count" aria-live="polite">
@@ -104,7 +106,7 @@ export default function Lightbox({ shots, index, onChange, onClose }) {
             <button
               className="lb-btn lb-next"
               type="button"
-              aria-label="Next screenshot"
+              aria-label={t("lb.next")}
               onClick={() => go(index + 1)}
             >
               <Icon name="arrow" />

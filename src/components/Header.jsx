@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import Icon from "./Icon.jsx";
+import { useTranslation } from "react-i18next";
 
 export default function Header({ brand, nav, activeId, theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const toggleLang = () =>
+    i18n.changeLanguage(i18n.language === "ar" ? "en" : "ar");
 
   useEffect(() => {
     const onKey = (e) => {
@@ -42,15 +46,24 @@ export default function Header({ brand, nav, activeId, theme, onToggleTheme }) {
               href={"#" + id}
               aria-current={activeId === id ? "true" : undefined}
             >
-              {label}
+              {t(label)}
             </a>
           ))}
         </nav>
         <button
+          className="icon-btn lang-btn"
+          type="button"
+          lang={i18n.language === "ar" ? "en" : "ar"}
+          aria-label={t("lang.aria")}
+          onClick={toggleLang}
+        >
+          {t("lang.short")}
+        </button>
+        <button
           className="icon-btn"
           type="button"
           aria-label={
-            theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+            theme === "dark" ? t("header.themeLight") : t("header.themeDark")
           }
           onClick={onToggleTheme}
         >

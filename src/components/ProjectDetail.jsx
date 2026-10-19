@@ -3,6 +3,7 @@ import Icon from "./Icon.jsx";
 import Badges from "./Badges.jsx";
 import Lightbox from "./Lightbox.jsx";
 import ProjectLinks from "./ProjectLinks.jsx";
+import { useTranslation } from "react-i18next";
 
 function Section({ title, children }) {
   return (
@@ -39,7 +40,9 @@ function StackGroup({ group, mine }) {
 }
 
 function DemoVideo({ src, title }) {
+  const { t } = useTranslation();
   const [broken, setBroken] = useState(false);
+
   if (broken) return null;
   return (
     <video
@@ -51,27 +54,29 @@ function DemoVideo({ src, title }) {
       muted
       playsInline
       preload="metadata"
-      aria-label={title + " demo video"}
+      aria-label={t("detail.videoAria", { title })}
       onError={() => {
-        console.warn("Video not found:", src);
+        console.warn(t("detail.noVideo"), src);
         setBroken(true);
       }}
     >
       <source src={src} type="video/mp4" />
-      Your browser can't play this video.
+      {t("detail.noVideo")}
     </video>
   );
 }
 
 function Shot({ shot, onOpen }) {
+  const { t } = useTranslation();
   const [broken, setBroken] = useState(false);
+
   if (broken) return null;
   return (
     <figure className="shot">
       <button
         className="shot-btn"
         type="button"
-        aria-label={"Enlarge screenshot: " + (shot.caption || shot.alt)}
+        aria-label={t("detail.enlarge", { name: shot.caption || shot.alt })}
         onClick={onOpen}
       >
         <img
@@ -93,6 +98,7 @@ export default function ProjectDetail({ project: p }) {
   const h1 = useRef(null);
   const opener = useRef(null);
   const [viewer, setViewer] = useState(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     h1.current?.focus({ preventScroll: true });
@@ -104,7 +110,7 @@ export default function ProjectDetail({ project: p }) {
       <div className="wrap detail-head">
         <a className="back" href="#projects">
           <Icon name="back" />
-          All projects
+          {t("detail.all")}
         </a>
         <Badges project={p} />
         <h1 ref={h1} id="detail-title" tabIndex={-1}>
@@ -117,39 +123,37 @@ export default function ProjectDetail({ project: p }) {
       <div className="wrap detail-grid">
         <div className="detail-main">
           {p.overview && (
-            <Section title="Overview">
-              {p.overview.map((t) => (
-                <p key={t.slice(0, 40)}>{t}</p>
+            <Section title={t("detail.overview")}>
+              {p.overview.map((text) => (
+                <p key={text.slice(0, 40)}>{text}</p>
               ))}
             </Section>
           )}
           {p.problem && (
-            <Section title="The problem">
+            <Section title={t("detail.problem")}>
               <p>{p.problem.intro}</p>
               <List items={p.problem.list} />
             </Section>
           )}
           {p.features && (
             <Section
-              title={
-                p.cat === "math" ? "What the study covers" : "Main features"
-              }
+              title={p.cat === "math" ? t("detail.math") : t("detail.features")}
             >
               <List items={p.features} />
             </Section>
           )}
           {p.video && (
-            <Section title="Demo">
+            <Section title={t("detail.demo")}>
               <DemoVideo src={p.video} title={p.title} />
             </Section>
           )}
           {p.contribution && (
-            <Section title="My contribution">
+            <Section title={t("detail.contribution")}>
               <List items={p.contribution} />
             </Section>
           )}
           {p.samples && (
-            <Section title="Sample output">
+            <Section title={t("detail.samples")}>
               {p.samplesNote && <p className="muted-note">{p.samplesNote}</p>}
               {p.samples.map((s) => (
                 <div className="sample-block" key={s.title}>
@@ -166,13 +170,13 @@ export default function ProjectDetail({ project: p }) {
             </Section>
           )}
           {p.results && (
-            <Section title="Findings">
+            <Section title={t("detail.findings")}>
               <List items={p.results} />
               {p.resultsNote && <p className="muted-note">{p.resultsNote}</p>}
             </Section>
           )}
           {p.screenshots?.length > 0 && (
-            <Section title="Screenshots">
+            <Section title={t("detail.shots")}>
               <div className="shots">
                 {p.screenshots.map((s, i) => (
                   <Shot
@@ -190,13 +194,13 @@ export default function ProjectDetail({ project: p }) {
           {p.callout && <div className="callout">{p.callout}</div>}
         </div>
 
-        <aside className="aside" aria-label="Project facts">
+        <aside className="aside" aria-label={t("detail.facts")}>
           <div className="card">
-            <h3>My role</h3>
+            <h3>{t("detail.role")}</h3>
             <p>{p.role}</p>
           </div>
           <div className="card">
-            <h3>Technology</h3>
+            <h3>{t("detail.tech")}</h3>
             <StackGroup group={p.stackMine} mine />
             {(p.stackTeam || []).map((g) => (
               <StackGroup key={g.label} group={g} />

@@ -1,15 +1,15 @@
-import { data } from "../data/portfolio.js";
+import { useTranslation } from "react-i18next";
+import useData from "../i18n/useData.js";
 
 export default function Skills() {
+  const { t } = useTranslation();
+  const data = useData();
   return (
     <section className="block" id="skills" aria-labelledby="skills-h">
       <div className="wrap">
         <div className="sec-head">
-          <h2 id="skills-h">Skills</h2>
-          <p className="lede">
-            Each group names the project, training or course that backs it up. I
-            don't rate myself with percentages.
-          </p>
+          <h2 id="skills-h">{t("skills.title")}</h2>
+          <p className="lede">{t("skills.lede")}</p>
         </div>
         <div className="grid skills">
           {data.skills.map((s) => (
@@ -26,11 +26,7 @@ export default function Skills() {
             </article>
           ))}
         </div>
-        <p className="note">
-          Networking and security are at a learning stage: university
-          coursework, one 20-hour course and several short online courses. I
-          have no professional security-operations experience.
-        </p>
+        <p className="note">{t("skills.note")}</p>
       </div>
     </section>
   );
