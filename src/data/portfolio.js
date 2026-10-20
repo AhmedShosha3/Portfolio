@@ -80,7 +80,7 @@ export const data = {
     },
     {
       group: "Robotics and electronics",
-      items: ["LEGO WeDo", "Electronics (Assistant)"],
+      items: ["LEGO WeDo (Coach)", "Electronics (Assistant)"],
       evidence: "Current role at Big Hero Robotics Academy.",
     },
     {

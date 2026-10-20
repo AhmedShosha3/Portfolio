@@ -75,7 +75,6 @@ export const ar = {
     { label: "هندسة الأوامر (Prompt Engineering)" },
     { label: "اللغة الإنجليزية" },
   ],
-  // Same order as portfolio.js: calculator, quotes, regex, math, laffa
   projects: [
     {
       title: "تطبيق آلة حاسبة بسيطة",
@@ -113,7 +112,6 @@ export const ar = {
         "سوق ويب وموبايل للمنتجات المخصصة والتفاوض مع الموردين. شاركت زميلًا في بناء واجهة الويب الأمامية باستخدام React وCSS.",
     },
   ],
-  // Same order: LEGO, MATLAB, database, IT
   experience: [
     {
       when: "أغسطس 2026 – الآن",

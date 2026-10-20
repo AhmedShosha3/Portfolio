@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { data as base } from "./data/portfolio.js"; // replaces the data/projectById import
+import { data as base } from "./data/portfolio.js";
 import useData from "./i18n/useData.js";
 import useTheme from "./hooks/useTheme.js";
 import useHashRoute from "./hooks/useHashRoute.js";
@@ -41,7 +41,6 @@ export default function App() {
     route.projectId !== null
       ? data.projects.find((p) => p.id === route.projectId)
       : undefined;
-  // ...rest unchanged
   const view = project
     ? "detail"
     : route.projectId !== null

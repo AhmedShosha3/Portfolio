@@ -50,49 +50,49 @@ export default function Hero() {
             <span>profile.json</span>
           </div>
           <div aria-hidden="true">
-            <span className="ln" style={{ "--i": 0 }}>
+            <span className="ln brace" style={{ "--i": 0 }}>
               {"{"}
             </span>
             <span className="ln" style={{ "--i": 1 }}>
               {"  "}
-              <span className="k">"Degree"</span>:{" "}
-              <span className="s">"Bachelor of Science"</span>,
+              <span className="k">"{t("hero.card.kDegree")}"</span>:{" "}
+              <span className="s">"{t("hero.card.degree")}"</span>,
             </span>
             <span className="ln" style={{ "--i": 2 }}>
               {"  "}
-              <span className="k">"Department"</span>:{" "}
-              <span className="s">"Mathematics & Computer Science"</span>,
+              <span className="k">"{t("hero.card.kDepartment")}"</span>:{" "}
+              <span className="s">"{t("hero.card.department")}"</span>,
             </span>
             <span className="ln" style={{ "--i": 3 }}>
               {"  "}
-              <span className="k">"University"</span>:{" "}
-              <span className="s">"Suez University, 2026"</span>,
+              <span className="k">"{t("hero.card.kUniversity")}"</span>:{" "}
+              <span className="s">"{t("hero.card.university")}"</span>,
             </span>
             <span className="ln" style={{ "--i": 4 }}>
               {"  "}
-              <span className="k">"Builds_with"</span>: [
-              <span className="s">"React"</span>,{" "}
-              <span className="s">"Flutter"</span>,{" "}
-              <span className="s">"Python"</span>],
+              <span className="k">"{t("hero.card.kBuilds")}"</span>: [
+              <span className="s tech">"React"</span>,{" "}
+              <span className="s tech">"Flutter"</span>,{" "}
+              <span className="s tech">"Python"</span>],
             </span>
             <span className="ln" style={{ "--i": 5 }}>
               {"  "}
-              <span className="k">"Models_with"</span>:{" "}
-              <span className="s">"MATLAB"</span>,
+              <span className="k">"{t("hero.card.kModels")}"</span>:{" "}
+              <span className="s tech">"MATLAB"</span>,
             </span>
             <span className="ln" style={{ "--i": 6 }}>
               {"  "}
-              <span className="k">"Teaches"</span>: [
-              <span className="s">"LEGO WeDo"</span>,{" "}
-              <span className="s">"Electronics"</span>],
+              <span className="k">"{t("hero.card.kTeaches")}"</span>: [
+              <span className="s tech">"LEGO WeDo"</span>,{" "}
+              <span className="s">"{t("hero.card.electronics")}"</span>],
             </span>
             <span className="ln" style={{ "--i": 7 }}>
               {"  "}
-              <span className="k">"Learning"</span>: [
-              <span className="s">"Networking"</span>,{" "}
-              <span className="s">"Cybersecurity"</span>]
+              <span className="k">"{t("hero.card.kLearning")}"</span>: [
+              <span className="s">"{t("hero.card.networking")}"</span>,{" "}
+              <span className="s">"{t("hero.card.cyber")}"</span>]
             </span>
-            <span className="ln" style={{ "--i": 8 }}>
+            <span className="ln brace" style={{ "--i": 8 }}>
               {"}"}
             </span>
           </div>

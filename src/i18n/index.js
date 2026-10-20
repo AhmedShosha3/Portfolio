@@ -26,6 +26,21 @@ const en = {
     about: "About me",
     profile:
       "Profile summary: Bachelor of Science in Mathematics and Computer Science, Suez University, 2026. Builds with React, Flutter and Python. Models with MATLAB. Teaches LEGO WeDo and electronics. Learning networking and cybersecurity.",
+    card: {
+      kDegree: "Degree",
+      kDepartment: "Department",
+      kUniversity: "University",
+      kBuilds: "Builds_with",
+      kModels: "Models_with",
+      kTeaches: "Teaches",
+      kLearning: "Learning",
+      degree: "Bachelor of Science",
+      department: "Mathematics & Computer Science",
+      university: "Suez University, 2026",
+      electronics: "Electronics",
+      networking: "Networking",
+      cyber: "Cybersecurity",
+    },
   },
   about: { title: "About me" },
   skills: {
@@ -125,6 +140,21 @@ const ar = {
     about: "نبذة عني",
     profile:
       "ملخص الملف الشخصي: بكالوريوس العلوم في الرياضيات وعلوم الحاسب، جامعة السويس، 2026. يبني باستخدام React وFlutter وPython، ويبني النماذج باستخدام MATLAB، ويدرّس LEGO WeDo والإلكترونيات، ويتعلم الشبكات والأمن السيبراني.",
+    card: {
+      kDegree: "الدرجة",
+      kDepartment: "القسم",
+      kUniversity: "الجامعة",
+      kBuilds: "يبني_بـ",
+      kModels: "ينمذج_بـ",
+      kTeaches: "يدرّس",
+      kLearning: "يتعلم",
+      degree: "بكالوريوس العلوم",
+      department: "الرياضيات وعلوم الحاسب",
+      university: "جامعة السويس، 2026",
+      electronics: "الإلكترونيات",
+      networking: "الشبكات",
+      cyber: "الأمن السيبراني",
+    },
   },
   about: { title: "نبذة عني" },
   skills: {
