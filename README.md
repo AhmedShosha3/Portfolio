@@ -41,7 +41,7 @@ src/
 public/
   ProjectsScreenshots/   project images and demo video
   CV.pdf
-  og-image.png           social share image
+  image.png           social share image
 ```
 
 ## Customizing
