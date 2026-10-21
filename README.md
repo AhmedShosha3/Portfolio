@@ -1,6 +1,6 @@
 # Ahmed Ibrahim Mohamed Kamel — Portfolio
 
-![Portfolio](public/image.png)
+![Portfolio](public/og-image.png)
 
 Personal portfolio of a Mathematics and Computer Science graduate (Suez University, 2026): web and mobile projects, applied mathematical modeling, and robotics teaching. Available in English and Arabic.
 
@@ -43,7 +43,7 @@ src/
 public/
   ProjectsScreenshots/   project images and demo video
   CV.pdf
-  image.png           social share image
+  og-image.png           social share image
 .github/workflows/       automatic deploy to GitHub Pages
 ```
 
