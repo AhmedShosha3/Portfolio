@@ -25,7 +25,7 @@ export const ar = {
     {
       group: "البرمجة",
       evidence:
-        "Python في أداة استخراج التعبيرات النمطية، وJavaScript في Laffa، وDart في تطبيقي Flutter، وMATLAB في مشروع النمذجة.",
+        "Python في أداة استخراج التعبيرات النمطية، و JavaScript في Laffa، و Dart في تطبيقي Flutter، و MATLAB في مشروع النمذجة.",
     },
     {
       group: "تطوير الويب",
