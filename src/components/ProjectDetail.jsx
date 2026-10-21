@@ -161,7 +161,7 @@ export default function ProjectDetail({ project: p }) {
                   <pre
                     className="sample"
                     tabIndex={0}
-                    aria-label={s.title + " sample output"}
+                    aria-label={t("detail.sampleAria", { title: s.title })}
                   >
                     <code>{s.text}</code>
                   </pre>

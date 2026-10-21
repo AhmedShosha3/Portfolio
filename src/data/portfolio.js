@@ -18,7 +18,7 @@ export const data = {
   about: [
     "I graduated in 2026 with a Bachelor of Science in Mathematics and Computer Science from Suez University. My academic work covers two sides of the field: applied mathematical modeling in MATLAB, and software, including web interfaces in React, mobile apps in Flutter and a desktop tool in Python.",
     "Outside the classroom I completed summer training in IT at Suez Shipyard Company and in databases at Nasr Petroleum Academy. I now teach LEGO WeDo robotics and assist with electronics at Big Hero Robotics Academy in Suez.",
-    "I'm building a foundation in networking and cybersecurity through a 20-hour course at The British University in Egypt and short courses on the ITI Mahara-Tech platform. I learn by building things, and I'm early in my career.",
+    "I'm building a foundation in networking and cybersecurity through a 20-hour course at The British University in Egypt and short courses on the ITI Mahara-Tech platform, I learn by building, and my next goal is a junior role where I can keep growing in software development and security.",
   ],
 
   facts: [
@@ -116,7 +116,7 @@ export const data = {
       cat: "mobile",
       glyph: "mobile",
       kind: "Academic project",
-      state: "Completed",
+      state: "completed",
       team: false,
       summary:
         "A Flutter calculator with a responsive interface, percentage and decimal handling, and clear and reset functions.",
@@ -160,7 +160,7 @@ export const data = {
       cat: "mobile",
       glyph: "mobile",
       kind: "Academic project",
-      state: "Completed",
+      state: "completed",
       team: true,
       summary:
         "A Flutter app that organizes Arabic quotes into Love, Life, Islamic and General categories, with light and dark themes.",
@@ -238,7 +238,7 @@ export const data = {
       cat: "desktop",
       glyph: "desktop",
       kind: "Academic project",
-      state: "Completed",
+      state: "completed",
       team: true,
       summary:
         "A Python tool with a file picker that extracts emails, phone numbers, names, addresses and dates from text, PDF and Word files, and masks phone-like numbers in the output.",
@@ -343,7 +343,7 @@ Customer Service lines:
       cat: "math",
       glyph: "math",
       kind: "Graduation project",
-      state: "Completed",
+      state: "completed",
       team: true,
       summary:
         "Developed and simulated mathematical models of cancer progression and COVID-19 transmission using MATLAB, applying classical and fractional-order differential equations and numerical solution methods.",
@@ -590,7 +590,6 @@ Customer Service lines:
           caption: "Add product",
         },
       ],
-      links: [{ label: "Live demo", href: "", icon: "external" }],
       stackTeam: [
         {
           label: "Backend (team)",
@@ -772,5 +771,3 @@ Customer Service lines:
     },
   ],
 };
-
-export const projectById = (id) => data.projects.find((p) => p.id === id);

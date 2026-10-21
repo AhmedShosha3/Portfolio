@@ -25,7 +25,7 @@ export default function Header({ brand, nav, activeId, theme, onToggleTheme }) {
         <button
           className="icon-btn menu-btn"
           type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? t("header.menuClose") : t("header.menuOpen")}
           aria-expanded={open}
           aria-controls="nav"
           onClick={() => setOpen((o) => !o)}
@@ -35,7 +35,7 @@ export default function Header({ brand, nav, activeId, theme, onToggleTheme }) {
         <nav
           className={"nav" + (open ? " open" : "")}
           id="nav"
-          aria-label="Main"
+          aria-label={t("header.mainNav")}
           onClick={(e) => {
             if (e.target.closest("a")) setOpen(false);
           }}

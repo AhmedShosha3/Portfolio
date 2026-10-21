@@ -17,8 +17,20 @@ const en = {
   header: {
     menuOpen: "Open menu",
     menuClose: "Close menu",
+    mainNav: "Main",
     themeLight: "Switch to light theme",
     themeDark: "Switch to dark theme",
+  },
+  card: {
+    view: "View project",
+    viewAria: "View project: {{title}}",
+    visualAria: "{{title}} project preview",
+  },
+  badge: {
+    team: "Team project",
+    solo: "Individual work",
+    completed: "Completed",
+    refining: "Being refined",
   },
   hero: {
     projects: "View projects",
@@ -78,6 +90,7 @@ const en = {
     facts: "Project facts",
     noVideo: "Your browser can't play this video.",
     videoAria: "{{title}} demo video",
+    sampleAria: "{{title}} sample output",
   },
   notFound: {
     title: "Project not found",
@@ -131,8 +144,20 @@ const ar = {
   header: {
     menuOpen: "فتح القائمة",
     menuClose: "إغلاق القائمة",
+    mainNav: "الرئيسية",
     themeLight: "التبديل إلى السمة الفاتحة",
     themeDark: "التبديل إلى السمة الداكنة",
+  },
+  card: {
+    view: "عرض المشروع",
+    viewAria: "عرض المشروع: {{title}}",
+    visualAria: "معاينة مشروع {{title}}",
+  },
+  badge: {
+    team: "مشروع جماعي",
+    solo: "عمل فردي",
+    completed: "مكتمل",
+    refining: "قيد التحسين",
   },
   hero: {
     projects: "عرض المشاريع",
@@ -192,6 +217,7 @@ const ar = {
     facts: "معلومات المشروع",
     noVideo: "متصفحك لا يستطيع تشغيل هذا الفيديو.",
     videoAria: "فيديو توضيحي: {{title}}",
+    sampleAria: "نموذج مخرجات: {{title}}",
   },
   notFound: {
     title: "المشروع غير موجود",

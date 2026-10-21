@@ -342,7 +342,7 @@ p {
   border-radius: 50%;
   background: currentColor;
 }
-.badge.Completed {
+.badge.completed {
   background: var(--ok-soft);
   color: var(--ok);
 }
