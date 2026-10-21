@@ -27,7 +27,6 @@ export default function Certificates() {
 
   return (
     <section className="block" id="certifications" aria-labelledby="cert-h">
-      {" "}
       <div className="wrap">
         <div className="sec-head">
           <h2 id="cert-h">{t("certs.title")}</h2>

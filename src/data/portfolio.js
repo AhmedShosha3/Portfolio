@@ -18,7 +18,7 @@ export const data = {
   about: [
     "I graduated in 2026 with a Bachelor of Science in Mathematics and Computer Science from Suez University. My academic work covers two sides of the field: applied mathematical modeling in MATLAB, and software, including web interfaces in React, mobile apps in Flutter and a desktop tool in Python.",
     "Outside the classroom I completed summer training in IT at Suez Shipyard Company and in databases at Nasr Petroleum Academy. I now teach LEGO WeDo robotics and assist with electronics at Big Hero Robotics Academy in Suez.",
-    "I'm building a foundation in networking and cybersecurity through a 20-hour course at The British University in Egypt and short courses on the ITI Mahara-Tech platform, I learn by building, and my next goal is a junior role where I can keep growing in software development and security.",
+    "I'm building a foundation in networking and cybersecurity through a 20-hour course at The British University in Egypt and short courses on the ITI Mahara-Tech platform. I learn by building, and my next goal is a junior role where I can keep growing in software development and security.",
   ],
 
   facts: [

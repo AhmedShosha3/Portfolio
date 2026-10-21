@@ -26,7 +26,6 @@ export default function ProjectCard({ project: p }) {
           role="img"
           aria-label={t("card.visualAria", { title: p.title })}
         >
-          {" "}
           <Icon name={p.glyph} />
         </div>
       )}

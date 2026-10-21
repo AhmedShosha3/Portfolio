@@ -66,13 +66,6 @@ const en = {
     empty: "No projects in this category yet. Choose All to see every project.",
     filter: "Filter projects by type",
   },
-  card: { view: "View project", viewAria: "View project: {{title}}" },
-  badge: {
-    team: "Team project",
-    solo: "Individual work",
-    Completed: "Completed",
-    refining: "Being refined",
-  },
   detail: {
     all: "All projects",
     overview: "Overview",
@@ -192,13 +185,6 @@ const ar = {
     lede: "أعمال أكاديمية ومشاريع تخرج. توضح كل صفحة مشروع ما بنيته بنفسي وما يخص الفريق.",
     empty: "لا توجد مشاريع في هذه الفئة بعد. اختر «الكل» لعرض جميع المشاريع.",
     filter: "تصفية المشاريع حسب النوع",
-  },
-  card: { view: "عرض المشروع", viewAria: "عرض المشروع: {{title}}" },
-  badge: {
-    team: "مشروع جماعي",
-    solo: "عمل فردي",
-    Completed: "مكتمل",
-    refining: "قيد التحسين",
   },
   detail: {
     all: "كل المشاريع",
