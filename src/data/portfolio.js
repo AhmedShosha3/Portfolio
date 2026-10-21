@@ -4,7 +4,7 @@ export const data = {
     brand: "Ahmed Shosha",
     intro:
       "Mathematics and Computer Science graduate with hands-on experience in web and mobile development, applied mathematical modeling and robotics teaching. Interested in software development and cybersecurity.",
-    headline: "Junior software developer · React and Python",
+    headline: "Junior software developer · React, Flutter and Python",
     availability: "Open to junior software roles and internships · Suez, Egypt",
   },
 
