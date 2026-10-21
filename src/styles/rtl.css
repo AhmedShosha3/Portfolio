@@ -27,7 +27,7 @@
   direction: ltr;
   unicode-bidi: isolate;
   font-family: var(--font-mono);
-  text-align: left;
+  text-align: right;
 }
 
 .code-card {
